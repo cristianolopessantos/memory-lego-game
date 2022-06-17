@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct LegoApp: App {
     var body: some Scene {
+        let game = LegoMemoryGame()
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: game)
         }
     }
 }

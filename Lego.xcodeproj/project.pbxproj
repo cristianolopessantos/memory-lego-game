@@ -11,6 +11,13 @@
 		23A193D4285BA94C003C1306 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A193D3285BA94C003C1306 /* ContentView.swift */; };
 		23A193D6285BA94D003C1306 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A193D5285BA94D003C1306 /* Assets.xcassets */; };
 		23A193D9285BA94D003C1306 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23A193D8285BA94D003C1306 /* Preview Assets.xcassets */; };
+		23A193E3285BA9A7003C1306 /* faustao-errou.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23A193DF285BA9A7003C1306 /* faustao-errou.mp3 */; };
+		23A193E4285BA9A7003C1306 /* ih-rapaz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23A193E0285BA9A7003C1306 /* ih-rapaz.mp3 */; };
+		23A193E5285BA9A7003C1306 /* certa-resposta.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23A193E1285BA9A7003C1306 /* certa-resposta.mp3 */; };
+		23A193E6285BA9A7003C1306 /* acerto-mizeravi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 23A193E2285BA9A7003C1306 /* acerto-mizeravi.mp3 */; };
+		23A193EA285BAA2F003C1306 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A193E9285BAA2F003C1306 /* AudioPlayer.swift */; };
+		23A193ED285BAA95003C1306 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A193EC285BAA95003C1306 /* MemoryGame.swift */; };
+		23A193F0285BAACC003C1306 /* LegoMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A193EF285BAACC003C1306 /* LegoMemoryGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		23A193D3285BA94C003C1306 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		23A193D5285BA94D003C1306 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23A193D8285BA94D003C1306 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		23A193DF285BA9A7003C1306 /* faustao-errou.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "faustao-errou.mp3"; sourceTree = "<group>"; };
+		23A193E0285BA9A7003C1306 /* ih-rapaz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ih-rapaz.mp3"; sourceTree = "<group>"; };
+		23A193E1285BA9A7003C1306 /* certa-resposta.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "certa-resposta.mp3"; sourceTree = "<group>"; };
+		23A193E2285BA9A7003C1306 /* acerto-mizeravi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "acerto-mizeravi.mp3"; sourceTree = "<group>"; };
+		23A193E9285BAA2F003C1306 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		23A193EC285BAA95003C1306 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		23A193EF285BAACC003C1306 /* LegoMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegoMemoryGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,10 @@
 		23A193D0285BA94C003C1306 /* Lego */ = {
 			isa = PBXGroup;
 			children = (
+				23A193EE285BAAB8003C1306 /* ViewModel */,
+				23A193EB285BAA87003C1306 /* Model */,
+				23A193E8285BAA1E003C1306 /* Utilities */,
+				23A193E7285BA9AE003C1306 /* Sounds */,
 				23A193D1285BA94C003C1306 /* LegoApp.swift */,
 				23A193D3285BA94C003C1306 /* ContentView.swift */,
 				23A193D5285BA94D003C1306 /* Assets.xcassets */,
@@ -65,6 +83,41 @@
 				23A193D8285BA94D003C1306 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		23A193E7285BA9AE003C1306 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				23A193E2285BA9A7003C1306 /* acerto-mizeravi.mp3 */,
+				23A193E1285BA9A7003C1306 /* certa-resposta.mp3 */,
+				23A193DF285BA9A7003C1306 /* faustao-errou.mp3 */,
+				23A193E0285BA9A7003C1306 /* ih-rapaz.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		23A193E8285BAA1E003C1306 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				23A193E9285BAA2F003C1306 /* AudioPlayer.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		23A193EB285BAA87003C1306 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A193EC285BAA95003C1306 /* MemoryGame.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		23A193EE285BAAB8003C1306 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23A193EF285BAACC003C1306 /* LegoMemoryGame.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +178,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A193E5285BA9A7003C1306 /* certa-resposta.mp3 in Resources */,
 				23A193D9285BA94D003C1306 /* Preview Assets.xcassets in Resources */,
+				23A193E3285BA9A7003C1306 /* faustao-errou.mp3 in Resources */,
+				23A193E4285BA9A7003C1306 /* ih-rapaz.mp3 in Resources */,
 				23A193D6285BA94D003C1306 /* Assets.xcassets in Resources */,
+				23A193E6285BA9A7003C1306 /* acerto-mizeravi.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +196,9 @@
 			files = (
 				23A193D4285BA94C003C1306 /* ContentView.swift in Sources */,
 				23A193D2285BA94C003C1306 /* LegoApp.swift in Sources */,
+				23A193ED285BAA95003C1306 /* MemoryGame.swift in Sources */,
+				23A193EA285BAA2F003C1306 /* AudioPlayer.swift in Sources */,
+				23A193F0285BAACC003C1306 /* LegoMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +335,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +365,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
