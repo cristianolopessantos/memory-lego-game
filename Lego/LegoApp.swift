@@ -12,7 +12,7 @@ struct LegoApp: App {
     var body: some Scene {
         let game = LegoMemoryGame()
         WindowGroup {
-            ContentView(viewModel: game)
+            LegoMemoryGameView(game: game)
         }
     }
 }

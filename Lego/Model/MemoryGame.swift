@@ -15,34 +15,32 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     private(set)var cards: Array<Card>
     var countAttemps: Int = 0
     let limitAttempts: Int = 50
-    private var indexOfTheOneAndOnlyFaceUpCard: Int?
+    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
+        get { cards.indices.filter({cards[$0].isFaceUp}).oneAndOnly}
+        set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) } }
+    }
     
     mutating func choose(_ card: Card) {
+        let randomInt = Int.random(in: 0...1)
         if let chooseIndex = cards.firstIndex(where: {$0.id == card.id}),
            !cards[chooseIndex].isFaceUp,
            !cards[chooseIndex].isMatched
         {
             if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
-//                let randomInt = Int.random(in: 0...1)
                 if cards[chooseIndex].content == cards[potentialMatchIndex].content {
                     cards[chooseIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                     hapticFeedback.notificationOccurred(.success)
-//                    playSound(sound: soundsSuccessArray[randomInt], type: "mp3")
-                }else{
+                    playSound(sound: soundsSuccessArray[randomInt], type: "mp3")
+                } else {
                     hapticFeedback.notificationOccurred(.error)
-//                    playSound(sound: soundsErrorArray[randomInt], type: "mp3")
+                    playSound(sound: soundsErrorArray[randomInt], type: "mp3")
                 }
-                indexOfTheOneAndOnlyFaceUpCard = nil
-                countAttemps+=1
+                cards[chooseIndex].isFaceUp = true
             }else{
-                for index in cards.indices {
-                    cards[index].isFaceUp = false
-                }
-                indexOfTheOneAndOnlyFaceUpCard = chooseIndex
+                    indexOfTheOneAndOnlyFaceUpCard = chooseIndex
             }
-            
-            cards[chooseIndex].isFaceUp.toggle()
+            countAttemps+=1
         }
     }
     
@@ -58,7 +56,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     init(numberOfPairOfCards: Int, createCardContent: (Int) -> CardContent) {
-        cards = Array<Card>()
+        cards = []
         // add numberOfPairOfCards x 2 cards to cards array
         for pairIndex in 0..<numberOfPairOfCards {
             let content = createCardContent(pairIndex)
@@ -69,9 +67,19 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     struct Card: Identifiable{
-        var isFaceUp: Bool = false
-        var isMatched: Bool = false
-        var content: CardContent
-        var id: Int
+        var isFaceUp = false
+        var isMatched = false
+        let content: CardContent
+        let id: Int
+    }
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        if self.count == 1 {
+            return self.first
+        }else{
+            return nil
+        }
     }
 }
